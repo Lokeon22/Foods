@@ -13,12 +13,14 @@ export const Login = () => {
           <img src={explorer} className="w-80 h-12" />
         </div>
         <div className="w-full md:w-[450px] bg-[#001119] px-8 py-8 md:px-16 md:py-16 flex flex-col justify-center rounded-lg">
-          <h2 className="font-medium text-3xl text-center mb-8">Faça login</h2>
+          <h2 className="font-medium text-3xl text-center mb-8 font-Poppins">
+            Faça login
+          </h2>
           <form>
             <Input
               id="email"
               type="text"
-              place="exemplo@exemplo.com.br"
+              place="Exemplo: exemplo@exemplo.com.br"
               required
             />
             <Input id="senha" type="password" place="No mínimo 6 caracteres" />

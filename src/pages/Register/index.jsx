@@ -26,7 +26,7 @@ export const Register = () => {
             <Input
               id="email"
               type="text"
-              place="exemplo@exemplo.com.br"
+              place="Exemplo: exemplo@exemplo.com.br"
               required
             />
             <Input id="senha" type="password" place="No mínimo 6 caracteres" />
