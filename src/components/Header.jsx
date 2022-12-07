@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import explorer from "../assets/icons/explorer.svg";
 import logout from "../assets/icons/SignOut.svg";
@@ -32,9 +33,9 @@ export const Header = () => {
             className="md:w-8 md:h-8 w-6 h-6 absolute md:top-2.5 md:left-1.5 top-1.5 left-1"
           />
         </button>
-        <a href="">
+        <Link to="/">
           <img src={logout} className="md:w-8 md:h-8 w-7 h-7" />
-        </a>
+        </Link>
       </div>
     </section>
   );

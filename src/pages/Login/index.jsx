@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import explorer from "../../assets/icons/explorer.svg";
 
 import { Input } from "../../components/Input";
@@ -24,7 +25,9 @@ export const Login = () => {
               required
             />
             <Input id="senha" type="password" place="No mínimo 6 caracteres" />
-            <Button id="login" name="Entrar" />
+            <Link to="/home">
+              <Button id="login" name="Entrar" />
+            </Link>
             <Href name="Criar uma conta" to="/register" />
           </form>
         </div>
