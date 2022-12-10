@@ -21,7 +21,7 @@ export function Plates() {
     setFavorites(filtered);
   };
 
-  const isFavorites = false;
+  const isFavorites = favorites.some((dt) => dt.title === data[0].title);
 
   const carousel = useRef(null);
 
