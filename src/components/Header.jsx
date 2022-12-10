@@ -12,10 +12,15 @@ export const Header = () => {
   return (
     <section className="w-full h-44 xl:h-[104px] bg-[#00111A] px-8 py-4 xl:px-8 lg:px-16 lg:py-3 grid xl:grid-cols-4 grid-cols-1 mb-20 md:mb-40">
       <div className="flex flex-wrap items-center justify-center gap-3 md:gap-8 xl:col-span-3">
-        <img src={explorer} className="w-40 h-8 md:w-48" />
-        <a href="#" className="text-[#E1E1E6] font-Roboto font-normal mt-2">
+        <Link to="/home">
+          <img src={explorer} className="w-40 h-8 md:w-48" />
+        </Link>
+        <Link
+          to="/favorites"
+          className="text-[#E1E1E6] font-Roboto font-normal mt-2"
+        >
           Meus favoritos
-        </a>
+        </Link>
         <label className="relative flex items-center md:w-1/2 w-3/4 md:py-3 py-1">
           <input
             type="text"

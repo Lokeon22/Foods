@@ -1,22 +1,29 @@
-import { useEffect, useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
+import { FavoritesContext } from "../pages/Favorites/contexts/FavoritesContext";
 
 import minus from "../assets/icons/Minus.svg";
 import plus from "../assets/icons/Plus.svg";
 import heart from "../assets/icons/HeartStraight.svg";
 import redheart from "../assets/icons/redheart.svg";
 
-import pratos from "../data";
-
 export function Plates() {
+  const { data, favorites, setFavorites } = useContext(FavoritesContext);
   const [amount, setAmount] = useState(1);
   const [coracao, setCoracao] = useState(false);
 
-  const carousel = useRef(null);
-
-  const teste = () => {
-    setCoracao(!coracao);
+  const addPlatesFavorites = (data) => {
+    setFavorites([...favorites, data]);
   };
+
+  const removePlatesFavorites = (id) => {
+    let filtered = favorites.filter((plate) => plate.id !== id);
+    setFavorites(filtered);
+  };
+
+  const isFavorites = false;
+
+  const carousel = useRef(null);
 
   const handleLeftClick = (e) => {
     e.preventDefault();
@@ -40,33 +47,29 @@ export function Plates() {
         className="carousel flex flex-nowrap overflow-x-auto md:scrollbar-hide scrollbar-default scroll-smooth"
         ref={carousel}
       >
-        {pratos.map(({ id, title, desc, preco, image }) => (
+        {data.map((data) => (
           <div
-            key={id}
+            key={data.id}
             className="sm:w-[300px] w-full flex flex-none py-2 px-2 sm:py-14 sm:px-6 flex-col items-center"
           >
-            {coracao ? (
-              <img
-                src={redheart}
-                className="w-8 h-8 cursor-pointer self-end"
-                onClick={teste}
-              />
-            ) : (
-              <img
-                src={heart}
-                className="w-8 h-8 cursor-pointer self-end"
-                onClick={teste}
-              />
-            )}
-            <img src={image} className="w-44 h-44 object-cover" />
+            <img
+              src={isFavorites ? redheart : heart}
+              className="w-8 h-8 cursor-pointer self-end"
+              onClick={() =>
+                isFavorites
+                  ? removePlatesFavorites(data.id)
+                  : addPlatesFavorites(data)
+              }
+            />
+            <img src={data.image} className="w-44 h-44 object-cover" />
             <h2 className="text-[22px] text-center font-Poppins font-semibold mt-4 mb-4">
-              {title}
+              {data.title}
             </h2>
             <p className="text-xs font-Roboto font-normal text-center">
-              {desc}
+              {data.desc}
             </p>
             <span className="text-[#82F3FF] text-3xl font-Roboto mt-4 mb-4">
-              R$ {preco}
+              R$ {data.preco}
             </span>
             <form className="flex flex-wrap justify-center items-center gap-4">
               <button type="button">
