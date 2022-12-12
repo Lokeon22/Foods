@@ -1,6 +1,7 @@
 import { useContext } from "react";
-import { Header } from "../../components/Header";
 import { FavoritesContext } from "./contexts/FavoritesContext";
+
+import { Header } from "../../components/Header";
 
 export const Favorites = () => {
   const { data, favorites, setFavorites } = useContext(FavoritesContext);
