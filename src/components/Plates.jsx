@@ -1,7 +1,7 @@
-import { ButtonsPlates } from "../FavPieces/ButtonsPlates";
-import { HeartFavorites } from "../FavPieces/HeartFavorites";
+import { ButtonsPlates } from "./FavPieces/ButtonsPlates";
+import { HeartFavorites } from "./FavPieces/HeartFavorites";
 
-export function Bebidas({
+export function Plates({
   title,
   desc,
   preco,

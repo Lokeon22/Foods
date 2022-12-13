@@ -2,7 +2,7 @@ import { useContext, useRef } from "react";
 
 import { FavoritesContext } from "../../pages/Favorites/contexts/FavoritesContext";
 
-import { Plates } from "./Plates";
+import { Plates } from "../Plates";
 import { Carouselleft } from "../Carousel/Carouselleft";
 import { Carouselright } from "../Carousel/Carouselright";
 

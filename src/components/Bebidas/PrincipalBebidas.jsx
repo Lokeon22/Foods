@@ -2,7 +2,7 @@ import { useContext, useRef } from "react";
 
 import { FavoritesContext } from "../../pages/Favorites/contexts/FavoritesContext";
 
-import { Bebidas } from "./Bebidas";
+import { Plates } from "../Plates";
 import { Carouselleft } from "../Carousel/Carouselleft";
 import { Carouselright } from "../Carousel/Carouselright";
 
@@ -30,7 +30,7 @@ export const PrincipalBebidas = ({ handleRightClick, handleLeftClick }) => {
             key={data.id}
             className="sm:w-[300px] w-full flex flex-none py-2 px-2 sm:py-14 sm:px-6 flex-col items-center"
           >
-            <Bebidas
+            <Plates
               key={data.id}
               title={data.title}
               desc={data.desc}
