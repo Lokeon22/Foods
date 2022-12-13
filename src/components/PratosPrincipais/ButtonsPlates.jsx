@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import minus from "../assets/icons/Minus.svg";
-import plus from "../assets/icons/Plus.svg";
+import minus from "../../assets/icons/Minus.svg";
+import plus from "../../assets/icons/Plus.svg";
 
-export const Buttons = ({ data }) => {
+export const ButtonsPlates = ({ data }) => {
   const [amount, setAmount] = useState(1);
 
   const addProduct = (id) => {

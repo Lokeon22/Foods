@@ -1,7 +1,8 @@
 import { Header } from "../../components/Header";
 import { SaboresIni } from "../../components/SaboresIni";
 import { TitleCategory } from "../../components/TitleCategory";
-import { PrincipalPlates } from "../../components/PrincipalPlates";
+import { PrincipalPlates } from "../../components/PratosPrincipais/PrincipalPlates";
+import { SobremesasPlates } from "../../components/Sobremesas/SobremesasPlates";
 
 export const Home = () => {
   return (
@@ -11,6 +12,8 @@ export const Home = () => {
       <section className="max-w-[1120px] mx-auto my-0 px-3 py-3 xl:px-0 xl:py-0 font-Poppins font-medium">
         <TitleCategory title="Pratos Principais" />
         <PrincipalPlates />
+        <TitleCategory title="Sobremesas" />
+        <SobremesasPlates />
       </section>
     </section>
   );

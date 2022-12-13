@@ -1,10 +1,10 @@
-import { useContext, useState, useRef } from "react";
+import { useContext, useRef } from "react";
 
-import { FavoritesContext } from "../pages/Favorites/contexts/FavoritesContext";
+import { FavoritesContext } from "../../pages/Favorites/contexts/FavoritesContext";
 
-import { Plates } from "../components/Plates";
-import { Carouselleft } from "../components/Carouselleft";
-import { Carouselright } from "../components/Carouselright";
+import { Plates } from "./Plates";
+import { Carouselleft } from "../Carouselleft";
+import { Carouselright } from "../Carouselright";
 
 export const PrincipalPlates = () => {
   const { data, favorites, setFavorites } = useContext(FavoritesContext);

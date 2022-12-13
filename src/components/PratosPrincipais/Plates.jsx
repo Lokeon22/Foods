@@ -1,8 +1,5 @@
-import { useState, useContext } from "react";
-import { FavoritesContext } from "../pages/Favorites/contexts/FavoritesContext";
-
-import { Buttons } from "../components/Buttons";
-import { HeartFavorites } from "../components/HeartFavorites";
+import { ButtonsPlates } from "./ButtonsPlates";
+import { HeartFavorites } from "./HeartFavorites";
 
 export function Plates({
   title,
@@ -28,7 +25,7 @@ export function Plates({
       <span className="text-[#82F3FF] text-3xl font-Roboto mt-4 mb-4">
         R$ {preco}
       </span>
-      <Buttons data={data} />
+      <ButtonsPlates data={data} />
     </>
   );
 }

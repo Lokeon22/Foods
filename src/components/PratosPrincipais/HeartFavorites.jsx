@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { FavoritesContext } from "../pages/Favorites/contexts/FavoritesContext";
+import { FavoritesContext } from "../../pages/Favorites/contexts/FavoritesContext";
 
-import heart from "../assets/icons/HeartStraight.svg";
-import redheart from "../assets/icons/redheart.svg";
+import heart from "../../assets/icons/HeartStraight.svg";
+import redheart from "../../assets/icons/redheart.svg";
 
 export const HeartFavorites = ({
   addPlatesFavorites,
