@@ -2,7 +2,7 @@ import frutas from "../assets/icons/frutas.svg";
 
 export const SaboresIni = () => {
   return (
-    <div className="max-w-[1120px] h-64 bg-[#00111A] rounded-lg mx-auto mt-0 mb-24 md:mb-16 grid grid-cols-1 md:grid-cols-2 items-center">
+    <div className="max-w-[1120px] h-64 bg-[#00111A] rounded-lg mx-auto mt-20 md:mt-40 mb-24 md:mb-16 grid grid-cols-1 md:grid-cols-2 items-center">
       <img
         src={frutas}
         className="relative xl:-top-[104px] xl:right-14 w-full xl:h-full h-64"

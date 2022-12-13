@@ -4,6 +4,7 @@ import { TitleCategory } from "../../components/TitleCategory";
 import { PrincipalPlates } from "../../components/PratosPrincipais/PrincipalPlates";
 import { PrincipalSobremesas } from "../../components/Sobremesas/PrincipalSobremesas";
 import { PrincipalBebidas } from "../../components/Bebidas/PrincipalBebidas";
+import { Footer } from "../../components/Footer";
 
 export const Home = () => {
   return (
@@ -11,13 +12,17 @@ export const Home = () => {
       <Header />
       <SaboresIni />
       <section className="max-w-[1120px] mx-auto my-0 px-3 py-3 xl:px-0 xl:py-0 font-Poppins font-medium">
-        <TitleCategory title="Pratos Principais" />
+        <TitleCategory
+          className="text-2xl sm:text-3xl"
+          title="Pratos Principais"
+        />
         <PrincipalPlates />
-        <TitleCategory title="Sobremesas" />
+        <TitleCategory className="text-2xl sm:text-3xl" title="Sobremesas" />
         <PrincipalSobremesas />
-        <TitleCategory title="Bebidas" />
+        <TitleCategory className="text-2xl sm:text-3xl" title="Bebidas" />
         <PrincipalBebidas />
       </section>
+      <Footer />
     </section>
   );
 };
