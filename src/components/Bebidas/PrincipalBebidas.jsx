@@ -2,12 +2,12 @@ import { useContext, useRef } from "react";
 
 import { FavoritesContext } from "../../pages/Favorites/contexts/FavoritesContext";
 
-import { Plates } from "./Plates";
+import { Bebidas } from "./Bebidas";
 import { Carouselleft } from "../Carousel/Carouselleft";
 import { Carouselright } from "../Carousel/Carouselright";
 
-export const PrincipalPlates = ({ handleRightClick, handleLeftClick }) => {
-  const { data, favorites, setFavorites } = useContext(FavoritesContext);
+export const PrincipalBebidas = ({ handleRightClick, handleLeftClick }) => {
+  const { bebidas, favorites, setFavorites } = useContext(FavoritesContext);
   const carousel = useRef(null);
 
   const addPlatesFavorites = (data) => {
@@ -25,12 +25,12 @@ export const PrincipalPlates = ({ handleRightClick, handleLeftClick }) => {
         className="carousel flex flex-nowrap overflow-x-auto md:scrollbar-hide scrollbar-default scroll-smooth"
         ref={carousel}
       >
-        {data.map((data) => (
+        {bebidas.map((data) => (
           <div
             key={data.id}
             className="sm:w-[300px] w-full flex flex-none py-2 px-2 sm:py-14 sm:px-6 flex-col items-center"
           >
-            <Plates
+            <Bebidas
               key={data.id}
               title={data.title}
               desc={data.desc}

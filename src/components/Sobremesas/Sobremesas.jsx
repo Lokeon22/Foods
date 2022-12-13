@@ -1,21 +1,21 @@
-import { ButtonsSobremesas } from "./ButtonsSobremesa";
-import { HeartFavoritesSobremesas } from "./HeartFavoritesSobremesas";
+import { HeartFavorites } from "../FavPieces/HeartFavorites";
+import { ButtonsPlates } from "../FavPieces/ButtonsPlates";
 
 export function Sobremesas({
   title,
   desc,
   preco,
   src,
-  sobremesas,
-  addSobremesasFavorites,
-  removeSobremesasFavorites,
+  data,
+  addPlatesFavorites,
+  removePlatesFavorites,
 }) {
   return (
     <>
-      <HeartFavoritesSobremesas
-        addSobremesasFavorites={addSobremesasFavorites}
-        removeSobremesasFavorites={removeSobremesasFavorites}
-        sobremesas={sobremesas}
+      <HeartFavorites
+        addPlatesFavorites={addPlatesFavorites}
+        removePlatesFavorites={removePlatesFavorites}
+        data={data}
       />
       <img src={src} className="w-44 h-44 object-cover" />
       <h2 className="text-[22px] text-center font-Poppins font-semibold mt-4 mb-4">
@@ -25,7 +25,7 @@ export function Sobremesas({
       <span className="text-[#82F3FF] text-3xl font-Roboto mt-4 mb-4">
         R$ {preco}
       </span>
-      <ButtonsSobremesas sobremesas={sobremesas} />
+      <ButtonsPlates data={data} />
     </>
   );
 }

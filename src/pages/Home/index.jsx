@@ -2,7 +2,8 @@ import { Header } from "../../components/Header";
 import { SaboresIni } from "../../components/SaboresIni";
 import { TitleCategory } from "../../components/TitleCategory";
 import { PrincipalPlates } from "../../components/PratosPrincipais/PrincipalPlates";
-import { SobremesasPlates } from "../../components/Sobremesas/SobremesasPlates";
+import { PrincipalSobremesas } from "../../components/Sobremesas/PrincipalSobremesas";
+import { PrincipalBebidas } from "../../components/Bebidas/PrincipalBebidas";
 
 export const Home = () => {
   return (
@@ -13,7 +14,9 @@ export const Home = () => {
         <TitleCategory title="Pratos Principais" />
         <PrincipalPlates />
         <TitleCategory title="Sobremesas" />
-        <SobremesasPlates />
+        <PrincipalSobremesas />
+        <TitleCategory title="Bebidas" />
+        <PrincipalBebidas />
       </section>
     </section>
   );

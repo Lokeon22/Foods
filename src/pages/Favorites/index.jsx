@@ -6,8 +6,6 @@ import { Header } from "../../components/Header";
 export const Favorites = () => {
   const { data, favorites, setFavorites } = useContext(FavoritesContext);
 
-  console.log(favorites);
-
   return (
     <section className="max-w-[1400px] h-full mx-auto my-0  text-white">
       <Header />
