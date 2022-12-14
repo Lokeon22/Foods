@@ -32,6 +32,7 @@ export const Favorites = () => {
               desc={data.desc}
               preco={data.preco}
               src={data.image}
+              ingre={data.ingre}
               data={data}
             />
           ))
