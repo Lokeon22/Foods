@@ -4,7 +4,7 @@ import { FavoritesContext } from "./contexts/FavoritesContext";
 
 import { Header } from "../../components/Header";
 import { TitleCategory } from "../../components/TitleCategory";
-import { PratosFavoritos } from "../../components/PratosFavoritos";
+import { PratosFavoritos } from "../../components/PratosFavoritos/PratosFavoritos";
 import { NotFoundFavorites } from "../../components/NotFoundFavorites";
 
 export const Favorites = () => {

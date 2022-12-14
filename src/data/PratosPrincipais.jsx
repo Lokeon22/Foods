@@ -8,13 +8,25 @@ import tomate from "../assets/foods/tomate.png";
 import rabanete from "../assets/foods/rabanete.png";
 import paonaan from "../assets/foods/pao-naan.png";
 
+import pao from "../assets/foods/pao.png";
+import presunto from "../assets/foods/presunto.png";
+import rucula from "../assets/foods/rucula.png";
+
+import camarao from "../assets/foods/camarao.png";
+import massa from "../assets/foods/massa.png";
+import pesto from "../assets/foods/pesto.png";
+import pepino from "../assets/foods/pepino.png";
+
 const pratos = [
   {
     id: 1,
     title: "Torradas de Parma",
     desc: "Presunto de parma e rúcula em um pão com fermentação natural.",
     preco: "25,97",
-    ingre: ["pão", "presunto", "rúcula"],
+    ingre: {
+      titleIngre: ["alface", "tomate", "rabanete", "pão"],
+      imageIngre: [alface, tomate, rabanete, paonaan],
+    },
     image: prato1,
   },
   {
@@ -22,6 +34,10 @@ const pratos = [
     title: "Spaguetti Gambe",
     desc: "Massa fresca com camarões e pesto recheado.",
     preco: "79,97",
+    ingre: {
+      titleIngre: ["camarão", "massa", "pesto"],
+      imageIngre: [camarao, massa, pesto],
+    },
     image: prato2,
   },
   {
@@ -29,6 +45,10 @@ const pratos = [
     title: "Salada Molla",
     desc: "Tomates, coentro, pepino, cebola roxa. Frescos e temperados.",
     preco: "19,97",
+    ingre: {
+      titleIngre: ["alface", "tomate", "pepino"],
+      imageIngre: [alface, tomate, pepino],
+    },
     image: prato3,
   },
   {
@@ -37,8 +57,8 @@ const pratos = [
     desc: "Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.",
     preco: "49,97",
     ingre: {
-      titleIngre: ["alface", "tomate", "rabanete", "pão"],
-      imageIngre: [alface, tomate, rabanete, paonaan],
+      titleIngre: ["pão", "presunto", "rúcula"],
+      imageIngre: [pao, presunto, rucula],
     },
     image: prato4,
   },
@@ -47,6 +67,10 @@ const pratos = [
     title: "Salada Molla",
     desc: "Tomates, coentro, pepino, cebola roxa. Frescos e temperados.",
     preco: "19,97",
+    ingre: {
+      titleIngre: ["alface", "tomate", "pepino"],
+      imageIngre: [alface, tomate, pepino],
+    },
     image: prato3,
   },
   {
@@ -54,6 +78,10 @@ const pratos = [
     title: "Spaguetti Gambe",
     desc: "Massa fresca com camarões e pesto recheado.",
     preco: "79,97",
+    ingre: {
+      titleIngre: ["camarão", "massa", "pesto"],
+      imageIngre: [camarao, massa, pesto],
+    },
     image: prato2,
   },
   {
@@ -61,6 +89,10 @@ const pratos = [
     title: "Torradas de Parma",
     desc: "Presunto de parma e rúcula em um pão com fermentação natural.",
     preco: "25,97",
+    ingre: {
+      titleIngre: ["alface", "tomate", "rabanete", "pão"],
+      imageIngre: [alface, tomate, rabanete, paonaan],
+    },
     image: prato1,
   },
   {
@@ -68,6 +100,10 @@ const pratos = [
     title: "Torradas de Parma",
     desc: "Presunto de parma e rúcula em um pão com fermentação natural.",
     preco: "25,97",
+    ingre: {
+      titleIngre: ["alface", "tomate", "rabanete", "pão"],
+      imageIngre: [alface, tomate, rabanete, paonaan],
+    },
     image: prato1,
   },
 ];

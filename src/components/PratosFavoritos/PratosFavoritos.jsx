@@ -1,4 +1,4 @@
-import { ButtonsPlates } from "../components/FavPieces/ButtonsPlates";
+import { ButtonsPlates } from "../FavPieces/ButtonsPlates";
 
 export const PratosFavoritos = ({
   data,
