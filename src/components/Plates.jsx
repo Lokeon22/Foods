@@ -1,5 +1,11 @@
+import { Link } from "react-router-dom";
+
+import { useContext } from "react";
+
 import { ButtonsPlates } from "./FavPieces/ButtonsPlates";
 import { HeartFavorites } from "./FavPieces/HeartFavorites";
+
+import { FavoritesContext } from "../pages/Favorites/contexts/FavoritesContext";
 
 export function Plates({
   title,
@@ -10,6 +16,12 @@ export function Plates({
   removePlatesFavorites,
   data,
 }) {
+  const { setDetails } = useContext(FavoritesContext);
+
+  const detalhes = (data) => {
+    setDetails(data);
+  };
+
   return (
     <>
       <HeartFavorites
@@ -17,7 +29,13 @@ export function Plates({
         removePlatesFavorites={removePlatesFavorites}
         data={data}
       />
-      <img src={src} className="w-44 h-44 object-cover" />
+      <Link to={`/details/${data.id}`}>
+        <img
+          src={src}
+          className="w-44 h-44 object-cover hover:opacity-75 hover:duration-300"
+          onClick={() => detalhes(data)}
+        />
+      </Link>
       <h2 className="text-[22px] text-center font-Poppins font-semibold mt-4 mb-4">
         {title}
       </h2>

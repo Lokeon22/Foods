@@ -7,10 +7,19 @@ export const FavoritesContext = createContext();
 
 export const Favorites = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
+  const [details, setDetails] = useState([]);
 
   return (
     <FavoritesContext.Provider
-      value={{ data, sobremesas, bebidas, favorites, setFavorites }}
+      value={{
+        data,
+        sobremesas,
+        bebidas,
+        favorites,
+        setFavorites,
+        details,
+        setDetails,
+      }}
     >
       {children}
     </FavoritesContext.Provider>

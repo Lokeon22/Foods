@@ -13,7 +13,7 @@ export const Header = () => {
     <section className="w-full h-44 xl:h-[104px] bg-[#00111A] px-8 py-4 xl:px-8 lg:px-16 lg:py-3 grid xl:grid-cols-4 grid-cols-1">
       <div className="flex flex-wrap items-center justify-center gap-3 md:gap-8 xl:col-span-3">
         <Link to="/home">
-          <img src={explorer} className="w-40 h-8 md:w-48" />
+          <img src={explorer} className="w-40 h-8 md:w-48 max-[346px]:hidden" />
         </Link>
         <Link
           to="/favorites"
@@ -31,7 +31,7 @@ export const Header = () => {
         </label>
       </div>
       <div className="flex items-center justify-center xl:justify-start md:gap-8 gap-3 md:mt-0 mt-4">
-        <button className="bg-[#750310] md:px-10 px-8 md:py-4 py-2 rounded-md font-Poppins font-medium relative text-sm">
+        <button className="bg-[#750310] md:px-10 px-8 md:py-4 py-2 rounded-md font-Poppins font-medium relative text-sm max-[346px]:text-[12px]">
           Meu pedido <span className="text-sm">({pedidos})</span>
           <img
             src={receipt}

@@ -40,7 +40,7 @@ export const bebidas = [
     desc: "Chá de anis, canela e limão. Sinta o outono italiano.",
     preco: "19,97",
     ingre: {
-      titleIngre: ["canela", "aniz", "limão"],
+      titleIngre: ["canela", "anises", "limão"],
       imageIngre: [canela, aniz, limao],
     },
     image: bebida3,

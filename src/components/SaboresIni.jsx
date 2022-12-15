@@ -11,7 +11,7 @@ export const SaboresIni = () => {
         <h2 className="font-medium text-2xl sm:text-3xl md:text-[40px]">
           Sabores inigualáveis
         </h2>
-        <p className="text-sm md:font-normal xl:mb-16">
+        <p className="text-sm md:font-normal xl:mb-16 md:mt-2">
           Sinta o cuidado do preparo com ingredientes selecionados
         </p>
       </div>
