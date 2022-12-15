@@ -5,6 +5,7 @@ import { FavoritesContext } from "../Favorites/contexts/FavoritesContext";
 import { Header } from "../../components/Header";
 import { TitleCategory } from "../../components/TitleCategory";
 import { PlateDetails } from "../../components/PlateDetails/";
+import sad from "../../assets/icons/sad.svg";
 
 export const Details = () => {
   const { details } = useContext(FavoritesContext);
@@ -24,7 +25,10 @@ export const Details = () => {
           title="Detalhes do prato"
         />
         {details.id === undefined ? (
-          <h2>Detalhes vazios</h2>
+          <div className="flex flex-col items-center justify-center">
+            <h2 className="text-2xl text-gray-500">Nada por aqui</h2>
+            <img src={sad} className="w-32 invert opacity-20" />
+          </div>
         ) : (
           <PlateDetails
             key={details.id}

@@ -12,7 +12,7 @@ export const Input = ({ id, type, place, ...rest }) => {
         id={id}
         type={type}
         placeholder={place}
-        className="w-full px-3 py-3 rounded outline-none mt-1 mb-4 md:mb-8 border border-gray-500 bg-transparent placeholder:text-[#7C7C8A]"
+        className="w-full lg:w-[348px] px-3 py-3 rounded outline-none mt-1 mb-4 md:mb-8 border border-gray-500 bg-transparent placeholder:text-[#7C7C8A]"
         {...rest}
       />
     </>
