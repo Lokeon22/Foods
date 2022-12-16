@@ -9,9 +9,15 @@ import { FavoritesContext } from "../Favorites/contexts/FavoritesContext";
 export const Pedidos = () => {
   const { pedidos, setPedidos } = useContext(FavoritesContext);
 
-  const removeFromCart = (id) => {
-    const filtered = pedidos.filter((ped) => ped.id !== id);
-    setPedidos(filtered);
+  console.log(pedidos);
+
+  const removeFromCart = (indexItem) => {
+    let filteredPed = pedidos.filter((x, index, arr) => {
+      arr[index] !== indexItem;
+
+      return index !== indexItem;
+    });
+    setPedidos(filteredPed);
   };
 
   return (
@@ -33,6 +39,7 @@ export const Pedidos = () => {
             <PlatesPedidos
               key={index}
               id={pedido.id}
+              indexItem={index}
               title={pedido.title}
               pedido={pedido}
               removeFromCart={removeFromCart}

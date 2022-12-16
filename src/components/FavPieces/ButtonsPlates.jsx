@@ -1,4 +1,4 @@
-import { useState, useRef, useContext } from "react";
+import { useState, useRef, useContext, useEffect } from "react";
 import { FavoritesContext } from "../../pages/Favorites/contexts/FavoritesContext";
 
 import minus from "../../assets/icons/Minus.svg";
