@@ -8,6 +8,7 @@ export const FavoritesContext = createContext();
 export const Favorites = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
   const [details, setDetails] = useState([]);
+  const [pedidos, setPedidos] = useState([]);
 
   return (
     <FavoritesContext.Provider
@@ -19,6 +20,8 @@ export const Favorites = ({ children }) => {
         setFavorites,
         details,
         setDetails,
+        pedidos,
+        setPedidos,
       }}
     >
       {children}

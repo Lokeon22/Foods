@@ -5,6 +5,7 @@ import { Register } from "../pages/Register";
 import { Home } from "../pages/Home";
 import { Favorites } from "../pages/Favorites";
 import { Details } from "../pages/Details";
+import { Pedidos } from "../pages/Pedidos";
 import { NotFound } from "../pages/NotFound";
 
 export const AppRoutes = () => {
@@ -15,6 +16,7 @@ export const AppRoutes = () => {
       <Route path="/home" element={<Home />} />
       <Route path="/favorites" element={<Favorites />} />
       <Route path="/details/:id" element={<Details />} />
+      <Route path="/pedidos" element={<Pedidos />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

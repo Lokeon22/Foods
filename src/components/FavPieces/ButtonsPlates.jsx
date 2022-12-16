@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { FavoritesContext } from "../../pages/Favorites/contexts/FavoritesContext";
 
 import minus from "../../assets/icons/Minus.svg";
 import plus from "../../assets/icons/Plus.svg";
 
 export const ButtonsPlates = ({ data }) => {
+  const { pedidos, setPedidos } = useContext(FavoritesContext);
+  const [carrinho, setCarrinho] = useState([]);
   const [amount, setAmount] = useState(1);
 
   const addProduct = (id) => {
@@ -12,7 +15,14 @@ export const ButtonsPlates = ({ data }) => {
       return null;
     }
     if (id === data.id) {
+      setCarrinho([...carrinho, data]);
       setAmount(amount + 1);
+    }
+  };
+
+  const adicionarCarrinho = (id) => {
+    if (id === data.id) {
+      setPedidos([...pedidos, ...carrinho, data]);
     }
   };
 
@@ -51,8 +61,9 @@ export const ButtonsPlates = ({ data }) => {
       <button
         type="submit"
         className="bg-[#92000E] px-4 py-2 rounded font-Poppins"
-        onClick={(event) => {
-          event.preventDefault();
+        onClick={(e) => {
+          e.preventDefault();
+          adicionarCarrinho(data.id);
         }}
       >
         incluir
