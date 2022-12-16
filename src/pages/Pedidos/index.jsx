@@ -3,11 +3,16 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Header } from "../../components/Header";
 import { TitleCategory } from "../../components/TitleCategory";
-import { PlatesPedidos } from "../../components/PlatesPedidos";
+import { PlatesPedidos } from "../../components/PratosPedidos/PlatesPedidos";
 import { FavoritesContext } from "../Favorites/contexts/FavoritesContext";
 
 export const Pedidos = () => {
-  const { pedidos } = useContext(FavoritesContext);
+  const { pedidos, setPedidos } = useContext(FavoritesContext);
+
+  const removeFromCart = (id) => {
+    const filtered = pedidos.filter((ped) => ped.id !== id);
+    setPedidos(filtered);
+  };
 
   return (
     <section className="max-w-[1400px] h-full mx-auto my-0  text-white">
@@ -30,6 +35,7 @@ export const Pedidos = () => {
               id={pedido.id}
               title={pedido.title}
               pedido={pedido}
+              removeFromCart={removeFromCart}
             />
           ))
         ) : (

@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useRef, useContext } from "react";
 import { FavoritesContext } from "../../pages/Favorites/contexts/FavoritesContext";
 
 import minus from "../../assets/icons/Minus.svg";
@@ -8,6 +8,7 @@ export const ButtonsPlates = ({ data }) => {
   const { pedidos, setPedidos } = useContext(FavoritesContext);
   const [carrinho, setCarrinho] = useState([]);
   const [amount, setAmount] = useState(1);
+  const botao = useRef(null);
 
   const addProduct = (id) => {
     if (amount >= 25) {
@@ -60,10 +61,12 @@ export const ButtonsPlates = ({ data }) => {
       </button>
       <button
         type="submit"
-        className="bg-[#92000E] px-4 py-2 rounded font-Poppins"
+        ref={botao}
+        className="bg-[#92000E] px-4 py-2 rounded font-Poppins hover:bg-[#7c000d] hover:duration-300"
         onClick={(e) => {
           e.preventDefault();
           adicionarCarrinho(data.id);
+          botao.current.classList.toggle("animate-modifyScale");
         }}
       >
         incluir

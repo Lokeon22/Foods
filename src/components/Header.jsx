@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { FavoritesContext } from "../pages/Favorites/contexts/FavoritesContext";
 
 import explorer from "../assets/icons/explorer.svg";
 import logout from "../assets/icons/SignOut.svg";
@@ -7,6 +8,8 @@ import search from "../assets/icons/search.svg";
 import receipt from "../assets/icons/receipt.svg";
 
 export const Header = () => {
+  const { pedidos } = useContext(FavoritesContext);
+
   return (
     <section className="w-full h-44 xl:h-[104px] bg-[#00111A] px-8 py-4 xl:px-8 lg:px-16 lg:py-3 grid xl:grid-cols-4 grid-cols-1">
       <div className="flex flex-wrap items-center justify-center gap-3 md:gap-8 xl:col-span-3">
@@ -31,7 +34,7 @@ export const Header = () => {
       <div className="flex items-center justify-center xl:justify-start md:gap-8 gap-3 md:mt-0 mt-4">
         <Link to="/pedidos">
           <button className="bg-[#750310] md:px-10 px-8 md:py-4 py-2 rounded-md font-Poppins font-medium relative text-sm max-[346px]:text-[12px] hover:bg-[#66030f] hover:duration-300">
-            Meu pedido <span className="text-sm">(0)</span>
+            Meu pedido <span className="text-sm">({pedidos.length})</span>
             <img
               src={receipt}
               className="md:w-8 md:h-8 w-6 h-6 absolute md:top-2.5 md:left-1.5 top-1.5 left-1"
