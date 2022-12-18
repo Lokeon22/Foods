@@ -11,8 +11,6 @@ import { FavoritesContext } from "../Favorites/contexts/FavoritesContext";
 export const Pedidos = () => {
   const { pedidos, setPedidos } = useContext(FavoritesContext);
 
-  console.log(pedidos);
-
   const removeFromCart = (indexItem) => {
     let filteredPed = pedidos.filter((x, index, arr) => {
       arr[index] !== indexItem;
@@ -43,12 +41,15 @@ export const Pedidos = () => {
               id={pedido.id}
               indexItem={index}
               title={pedido.title}
+              src={pedido.image}
               pedido={pedido}
               removeFromCart={removeFromCart}
             />
           ))
         ) : (
-          <h2 className="text-white">Nenhum pedido</h2>
+          <h2 className="w-full text-sm sm:text-base text-gray-400">
+            Nenhum pedido
+          </h2>
         )}
       </section>
       <Footer />

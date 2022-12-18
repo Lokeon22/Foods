@@ -1,13 +1,15 @@
-export const ButtonRemoveCart = ({ id, pedido, indexItem, removeFromCart }) => {
+import close from "../assets/icons/close.svg";
+
+export const ButtonRemoveCart = ({ indexItem, removeFromCart }) => {
   return (
-    <button
-      className="bg-blue-500 w-4 mb-2"
+    <p
+      className="text-[#750310] cursor-pointer hover:text-red-800"
       onClick={(e) => {
         e.preventDefault();
         removeFromCart(indexItem);
       }}
     >
-      X
-    </button>
+      Excluir
+    </p>
   );
 };
