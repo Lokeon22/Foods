@@ -8,6 +8,24 @@ export const PagamentoPixCard = () => {
   const [pixstyle, setPixstyle] = useState(true);
   const [cardstyle, setCardstyle] = useState(false);
   const [creditinfos, setCreditinfos] = useState(false);
+  const [creditdetails, setCreditdetails] = useState({
+    cartao: "",
+    validate: "",
+    cvc: "",
+  });
+
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value.replace(/\D/g, "");
+    setCreditdetails((prev) => {
+      return { ...prev, [name]: value };
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(creditdetails);
+  };
 
   const editStylePixCard = () => {
     setPixstyle(!pixstyle);
@@ -48,6 +66,7 @@ export const PagamentoPixCard = () => {
         <form
           style={creditinfos ? { display: "block" } : { display: "none" }}
           className="grid grid-cols-3 font-Roboto text-[#C4C4CC]"
+          onSubmit={handleSubmit}
         >
           <div className="col-span-1 flex flex-col mb-9">
             <label htmlFor="numerocartao" className="mb-2">
@@ -55,9 +74,17 @@ export const PagamentoPixCard = () => {
             </label>
             <input
               id="numerocartao"
-              type="number"
+              type="text"
+              name="cartao"
               placeholder="0000 0000 0000 0000"
+              maxLength="19"
+              required
+              value={creditdetails.cartao
+                .replace(/\s?/g, "")
+                .replace(/(\d{4})/g, "$1 ")
+                .trim()}
               className="py-3 px-4 bg-transparent border border-gray-500 rounded-md outline-none appearance-none"
+              onChange={handleChange}
             />
           </div>
           <section className="col-span-1 flex justify-center items-center gap-5 text-[#C4C4CC]">
@@ -67,9 +94,14 @@ export const PagamentoPixCard = () => {
               </label>
               <input
                 id="validade"
-                type="number"
+                type="text"
+                name="validate"
+                value={creditdetails.validate.replace(/^(\d{2})(\d)/, "$1/$2")}
+                required
                 placeholder="07/25"
-                className="py-3 px-4 bg-transparent border border-gray-500 rounded-md outline-none"
+                maxLength="5"
+                className="py-3 px-4 bg-transparent border border-gray-500 rounded-md"
+                onChange={handleChange}
               />
             </div>
             <div className="flex flex-col">
@@ -78,13 +110,21 @@ export const PagamentoPixCard = () => {
               </label>
               <input
                 id="cvc"
-                type="number"
+                type="text"
+                name="cvc"
+                value={creditdetails.cvc}
+                required
+                maxLength="3"
                 placeholder="000"
                 className="py-3 px-4 bg-transparent border border-gray-500 rounded-md outline-none"
+                onChange={handleChange}
               />
             </div>
           </section>
-          <button className="bg-[#750310] text-white hover:text-[#C4C4CC] col-span-1 w-full py-3 px-4 mt-9 rounded-md hover:bg-[#66030f] hover:duration-300">
+          <button
+            type="submit"
+            className="bg-[#750310] text-white hover:text-[#C4C4CC] col-span-1 w-full py-3 px-4 mt-9 rounded-md hover:bg-[#66030f] hover:duration-300"
+          >
             Finalizar pagamento
           </button>
         </form>
