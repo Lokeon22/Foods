@@ -5,6 +5,7 @@ export const PlatesPedidos = ({
   id,
   title,
   src,
+  preco,
   indexItem,
   pedido,
   removeFromCart,
@@ -21,18 +22,25 @@ export const PlatesPedidos = ({
   }, []);
 
   return (
-    <section>
+    <div className="flex items-center gap-2 mb-5">
       <div>
-        <img src={src} className="w-32" />
-        <h2>{title}</h2>
+        <img src={src} className="w-[72px]" />
       </div>
-      <ButtonRemoveCart
-        pedido={pedido}
-        id={id}
-        indexItem={indexItem}
-        removeFromCart={removeFromCart}
-      />
-      <h2>{dateplate}</h2>
-    </section>
+      <div>
+        <div className="flex items-center gap-2">
+          <h2 className="text-lg">{title}</h2>
+          <span className="text-gray-400 text-sm">R$ {preco}</span>
+        </div>
+        <div className="flex items-center justify-between gap-2">
+          <ButtonRemoveCart
+            pedido={pedido}
+            id={id}
+            indexItem={indexItem}
+            removeFromCart={removeFromCart}
+          />
+          <span className="text-gray-500 text-xs">{dateplate}</span>
+        </div>
+      </div>
+    </div>
   );
 };

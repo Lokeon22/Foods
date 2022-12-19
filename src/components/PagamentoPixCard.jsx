@@ -37,16 +37,24 @@ export const PagamentoPixCard = () => {
       <TitleCategory title="Pagamento" className="text-3xl mb-8" />
       <section className="font-Roboto font-normal flex justify-center items-center">
         <div
-          className="w-64 flex justify-center items-center gap-2 px-4 py-6 bg-blue-500  cursor-pointer"
-          style={pixstyle ? { border: "1px solid white" } : null}
+          className="w-64 flex justify-center items-center gap-2 px-4 py-6 cursor-pointer"
+          style={
+            pixstyle
+              ? { border: "1px solid #222d35", backgroundColor: "#0d161b" }
+              : null
+          }
           onClick={editStylePixCard}
         >
           <img src={pix} className="w-6 h-6" />
           <h2>PIX</h2>
         </div>
         <div
-          className="w-64 flex justify-center items-center gap-2 px-4 py-6 bg-blue-500 cursor-pointer"
-          style={cardstyle ? { border: "1px solid white" } : null}
+          className="w-64 flex justify-center items-center gap-2 px-4 py-6 cursor-pointer"
+          style={
+            cardstyle
+              ? { border: "1px solid #222d35", backgroundColor: "#0d161b" }
+              : null
+          }
           onClick={editStylePixCard}
         >
           <img src={creditcard} className="w-6 h-6" />
