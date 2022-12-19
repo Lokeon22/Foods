@@ -37,7 +37,7 @@ export const PagamentoPixCard = () => {
       <TitleCategory title="Pagamento" className="text-3xl mb-8" />
       <section className="font-Roboto font-normal flex justify-center items-center">
         <div
-          className="w-64 flex justify-center items-center gap-2 px-4 py-6 cursor-pointer"
+          className="w-full lg:w-64 flex justify-center items-center gap-2 px-4 py-6 cursor-pointer"
           style={
             pixstyle
               ? { border: "1px solid #222d35", backgroundColor: "#0d161b" }
@@ -49,7 +49,7 @@ export const PagamentoPixCard = () => {
           <h2>PIX</h2>
         </div>
         <div
-          className="w-64 flex justify-center items-center gap-2 px-4 py-6 cursor-pointer"
+          className="w-full lg:w-64 flex justify-center items-center gap-2 px-4 py-6 cursor-pointer"
           style={
             cardstyle
               ? { border: "1px solid #222d35", backgroundColor: "#0d161b" }
@@ -72,7 +72,7 @@ export const PagamentoPixCard = () => {
         />
         <form
           style={creditinfos ? { display: "block" } : { display: "none" }}
-          className="grid grid-cols-3 font-Roboto text-[#C4C4CC]"
+          className="w-full lg:w-auto grid grid-cols-3 font-Roboto text-[#C4C4CC]"
           onSubmit={handleSubmit}
         >
           <div className="col-span-1 flex flex-col mb-9">
@@ -107,7 +107,7 @@ export const PagamentoPixCard = () => {
                 required
                 placeholder="07/25"
                 maxLength="5"
-                className="py-3 px-4 bg-transparent border border-gray-500 rounded-md"
+                className="w-full lg:w-auto py-3 px-4 bg-transparent border border-gray-500 rounded-md"
                 onChange={handleChange}
               />
             </div>
@@ -123,7 +123,7 @@ export const PagamentoPixCard = () => {
                 required
                 maxLength="3"
                 placeholder="000"
-                className="py-3 px-4 bg-transparent border border-gray-500 rounded-md outline-none"
+                className="w-full lg:w-auto py-3 px-4 bg-transparent border border-gray-500 rounded-md outline-none"
                 onChange={handleChange}
               />
             </div>

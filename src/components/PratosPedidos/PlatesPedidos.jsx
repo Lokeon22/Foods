@@ -22,13 +22,13 @@ export const PlatesPedidos = ({
   }, []);
 
   return (
-    <div className="flex items-center gap-2 mb-5">
+    <div className="flex flex-row items-start md:items-center gap-3 mb-5">
       <div>
-        <img src={src} className="w-[72px]" />
+        <img src={src} className="max-w-[72px] md:w-[72px]" />
       </div>
       <div>
-        <div className="flex items-center gap-2">
-          <h2 className="text-lg">{title}</h2>
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-0 md:gap-2">
+          <h2 className="text-base sm:text-lg">{title}</h2>
           <span className="text-gray-400 text-sm">R$ {preco}</span>
         </div>
         <div className="flex items-center justify-between gap-2">
