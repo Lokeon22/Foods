@@ -24,7 +24,6 @@ export const PagamentoPixCard = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(creditdetails);
   };
 
   const editStylePixCard = () => {
