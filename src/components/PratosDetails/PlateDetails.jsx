@@ -28,7 +28,7 @@ export const PlateDetails = ({ data, id, title, desc, preco, src, ingre }) => {
           ))}
         </div>
         <div className="flex items-center justify-center md:justify-start md:gap-10 gap-5 md:mt-0 mt-4 max-[346px]:gap-2">
-          <span className="text-[#82F3FF] md:text-3xl text-2xl font-Roboto">
+          <span className="text-[#82F3FF] md:text-3xl text-2xl font-Roboto max-[346px]:text-xl">
             R$ {preco}
           </span>
           <ButtonsPlates data={data} />

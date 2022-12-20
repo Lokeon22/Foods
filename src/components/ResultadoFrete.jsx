@@ -11,7 +11,7 @@ export const ResultadoFrete = ({ simulate, getfrete, pedidos }) => {
       valorTotal += precos;
     });
     const newprice = valorTotal + taxaentrega;
-    let alterandoBRLnewprice = String(newprice).replace(".", ",").slice(0, 6);
+    let alterandoBRLnewprice = String(newprice).replace(".", ",").slice(0, 5);
     setValorfinal(alterandoBRLnewprice);
   }, [pedidos]);
 

@@ -11,18 +11,18 @@ export const Header = () => {
   const { pedidos } = useContext(FavoritesContext);
 
   return (
-    <section className="w-full h-44 xl:h-[104px] bg-[#00111A] px-8 py-4 xl:px-8 lg:px-16 lg:py-3 grid xl:grid-cols-4 grid-cols-1">
-      <div className="flex flex-wrap items-center justify-center gap-3 md:gap-8 xl:col-span-3">
+    <section className="w-full h-auto xl:h-[104px] bg-[#00111A] px-8 py-4 xl:px-8 lg:px-16 lg:py-3 grid xl:grid-cols-4 grid-cols-1">
+      <div className="flex flex-wrap items-center justify-center gap-3 md:gap-6 xl:col-span-3">
         <Link to="/home">
-          <img src={explorer} className="w-40 h-8 md:w-48 max-[346px]:hidden" />
+          <img src={explorer} className="w-40 h-8 md:w-48 max-[346px]:w-32" />
         </Link>
         <Link
           to="/favorites"
-          className="text-[#E1E1E6] font-Roboto font-normal mt-2"
+          className="text-[#E1E1E6] font-Roboto font-normal mt-1 max-[346px]:text-sm max-[346px]:mt-1"
         >
           Meus favoritos
         </Link>
-        <label className="relative flex items-center md:w-1/2 w-3/4 md:py-3 py-1">
+        <label className="relative flex items-center md:w-1/2 sm:w-1/2 w-72 md:py-3 py-1">
           <input
             type="text"
             className="relative font-Roboto w-full px-12 md:py-3 py-2 bg-[#0D1D25] border-none outline-none rounded-md placeholder:text-[#7C7C8A]"

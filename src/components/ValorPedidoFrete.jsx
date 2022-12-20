@@ -11,9 +11,9 @@ export const ValorPedidoFrete = ({ brlValorTotal }) => {
   const [simulate, setSimulate] = useState("");
 
   const getCep = async () => {
-    const data = await fetch(`https://viacep.com.br/ws/${cep}/json/`).then(
-      (res) => res.json()
-    );
+    //const data = await fetch(`https://viacep.com.br/ws/${cep}/json/`).then(
+    //(res) => res.json()
+    //);
     setGetfrete(data);
   };
 

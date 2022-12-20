@@ -1,6 +1,9 @@
 import { useState, useRef, useContext, useEffect } from "react";
 import { FavoritesContext } from "../../pages/Favorites/contexts/FavoritesContext";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import minus from "../../assets/icons/Minus.svg";
 import plus from "../../assets/icons/Plus.svg";
 
@@ -40,6 +43,18 @@ export const ButtonsPlates = ({ data }) => {
     setCarrinho(filteredCar);
   };
 
+  const notify = () =>
+    toast.success("Adicionou ao carrinho", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+
   return (
     <form className="flex flex-wrap justify-center items-center gap-4">
       <button type="button">
@@ -75,10 +90,23 @@ export const ButtonsPlates = ({ data }) => {
           e.preventDefault();
           adicionarCarrinho(data.id);
           botao.current.classList.toggle("animate-modifyScale");
+          notify();
         }}
       >
         incluir
       </button>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+        theme="colored"
+      />
     </form>
   );
 };
