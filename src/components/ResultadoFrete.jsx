@@ -17,12 +17,10 @@ export const ResultadoFrete = ({ simulate, getfrete, pedidos }) => {
 
   return (
     <div className="flex flex-col flex-wrap mt-1 text-sm md:text-base text-gray-300">
-      <div className="flex flex-wrap">
-        <p>{getfrete.logradouro} / </p>
-        <p>
-          {getfrete.localidade}-{getfrete.uf}
-        </p>
-      </div>
+      <p>{getfrete.logradouro}</p>
+      <p>
+        {getfrete.localidade}-{getfrete.uf}
+      </p>
       <span>Taxa de entrega: R${simulate}</span>
       <p className="text-lg text-white mt-1">Valor final: R$ {valorfinal}</p>
     </div>

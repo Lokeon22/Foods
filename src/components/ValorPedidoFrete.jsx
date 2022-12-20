@@ -47,8 +47,8 @@ export const ValorPedidoFrete = ({ brlValorTotal }) => {
           type="text"
           placeholder="CEP 00000-000"
           maxLength="9"
-          value={cep.replace(/(\d{5})/d, "$1-")}
-          className="px-1 py-1 text-black outline-none rounded text-xs md:text-base"
+          value={cep.replace(/^(\d{5})(\d)/, "$1-$2")}
+          className="px-1 py-1 outline-none rounded-md text-xs md:text-base bg-transparent border border-gray-500 text-slate-200"
           onChange={(e) => {
             setCep(e.target.value);
             maskCep(e);
@@ -56,7 +56,7 @@ export const ValorPedidoFrete = ({ brlValorTotal }) => {
         />
         <button
           type="submit"
-          className="px-1 py-1 bg-blue-500 hover:bg-blue-700 hover:duration-300 rounded text-xs md:text-base"
+          className="px-1 py-1 bg-[#750310] hover:bg-[#66030f] hover:duration-300 rounded text-xs md:text-base font-normal"
           onClick={(e) => {
             e.preventDefault();
             getCep();
