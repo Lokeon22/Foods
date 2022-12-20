@@ -4,7 +4,7 @@ import { FavoritesContext } from "../Favorites/contexts/FavoritesContext";
 
 import { Header } from "../../components/Header";
 import { TitleCategory } from "../../components/TitleCategory";
-import { PlateDetails } from "../../components/PlateDetails/";
+import { PlateDetails } from "../../components/PratosDetails/PlateDetails";
 import { Footer } from "../../components/Footer";
 import sad from "../../assets/icons/sad.svg";
 

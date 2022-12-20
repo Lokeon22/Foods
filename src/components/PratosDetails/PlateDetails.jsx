@@ -1,4 +1,4 @@
-import { ButtonsPlates } from "./FavPieces/ButtonsPlates";
+import { ButtonsPlates } from "../FavPieces/ButtonsPlates";
 
 export const PlateDetails = ({ data, id, title, desc, preco, src, ingre }) => {
   return (

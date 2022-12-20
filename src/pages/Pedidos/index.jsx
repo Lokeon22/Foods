@@ -4,6 +4,7 @@ import { Header } from "../../components/Header";
 import { TitleCategory } from "../../components/TitleCategory";
 import { PlatesPedidos } from "../../components/PratosPedidos/PlatesPedidos";
 import { PagamentoPixCard } from "../../components/PagamentoPixCard";
+import { ValorPedidoFrete } from "../../components/ValorPedidoFrete";
 import { Footer } from "../../components/Footer";
 
 import { FavoritesContext } from "../Favorites/contexts/FavoritesContext";
@@ -53,11 +54,12 @@ export const Pedidos = () => {
             ))}
           </section>
           {brlValorTotal.length > 1 ? (
-            <h2 className="text-lg mt-1 sm:mt-8 sm:mb-0 mb-4">
-              Total: R$ {brlValorTotal}
-            </h2>
+            <ValorPedidoFrete brlValorTotal={brlValorTotal} />
           ) : (
-            <p className="text-sm text-gray-400">Nenhum prato adicionado</p>
+            <TitleCategory
+              title="Nenhum prato adicionado"
+              className="text-sm text-gray-400"
+            />
           )}
         </div>
 
