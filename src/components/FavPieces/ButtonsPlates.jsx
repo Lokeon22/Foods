@@ -31,9 +31,13 @@ export const ButtonsPlates = ({ data }) => {
     if (amount <= 1) {
       return null;
     }
-    if (id === data.id) {
-      setAmount(amount - 1);
-    }
+    let filteredCar = carrinho.filter((x, index, arr) => {
+      arr[index] !== id;
+
+      return index !== id;
+    });
+    setAmount(amount - 1);
+    setCarrinho(filteredCar);
   };
 
   return (
@@ -42,7 +46,11 @@ export const ButtonsPlates = ({ data }) => {
         <img
           src={minus}
           className="w-6 h-6"
-          onClick={() => removeProduct(data.id)}
+          onClick={() =>
+            carrinho.map((car, index) => {
+              removeProduct(index);
+            })
+          }
         />
       </button>
       <button

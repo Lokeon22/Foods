@@ -1,5 +1,3 @@
-import close from "../assets/icons/close.svg";
-
 export const ButtonRemoveCart = ({ indexItem, removeFromCart }) => {
   return (
     <p
