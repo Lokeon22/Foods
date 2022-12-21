@@ -1,14 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { FavoritesContext } from "../pages/Favorites/contexts/FavoritesContext";
 
 import explorer from "../assets/icons/explorer.svg";
 import logout from "../assets/icons/SignOut.svg";
-import search from "../assets/icons/search.svg";
+import searchicon from "../assets/icons/search.svg";
 import receipt from "../assets/icons/receipt.svg";
 
 export const Header = () => {
   const { pedidos } = useContext(FavoritesContext);
+  const [search, setSearch] = useState("");
 
   return (
     <section className="w-full h-auto xl:h-[104px] bg-[#00111A] px-8 py-4 xl:px-8 lg:px-16 lg:py-3 grid xl:grid-cols-4 grid-cols-1">
@@ -18,7 +19,7 @@ export const Header = () => {
         </Link>
         <Link
           to="/favorites"
-          className="text-[#E1E1E6] font-Roboto font-normal mt-1 max-[346px]:text-sm max-[346px]:mt-1"
+          className="text-[#E1E1E6] font-Roboto font-normal mt-1 max-[346px]:text-sm max-[346px]:mt-1 hover:text-gray-400 hover:duration-300"
         >
           Meus favoritos
         </Link>
@@ -27,8 +28,17 @@ export const Header = () => {
             type="text"
             className="relative font-Roboto w-full px-12 md:py-3 py-2 bg-[#0D1D25] border-none outline-none rounded-md placeholder:text-[#7C7C8A]"
             placeholder="Busque pelas opções de pratos"
+            value={search}
+            onChange={({ target }) => {
+              setSearch(target.value);
+            }}
           />
-          <img src={search} className="md:w-6 md:h-6 w-5 h-5 absolute left-3" />
+          <Link to={search.length > 0 ? `/search/${search}` : null}>
+            <img
+              src={searchicon}
+              className="md:w-6 md:h-6 w-5 h-5 absolute top-3.5 md:top-6 left-3"
+            />
+          </Link>
         </label>
       </div>
       <div className="flex items-center justify-center xl:justify-start md:gap-8 gap-3 md:mt-0 mt-4">

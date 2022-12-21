@@ -6,6 +6,7 @@ import { Home } from "../pages/Home";
 import { Favorites } from "../pages/Favorites";
 import { Details } from "../pages/Details";
 import { Pedidos } from "../pages/Pedidos";
+import { Search } from "../pages/Search";
 import { NotFound } from "../pages/NotFound";
 
 export const AppRoutes = () => {
@@ -17,6 +18,7 @@ export const AppRoutes = () => {
       <Route path="/favorites" element={<Favorites />} />
       <Route path="/details/:id" element={<Details />} />
       <Route path="/pedidos" element={<Pedidos />} />
+      <Route path="/search/:name" element={<Search />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

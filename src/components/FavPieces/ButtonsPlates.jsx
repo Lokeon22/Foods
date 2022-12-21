@@ -44,7 +44,7 @@ export const ButtonsPlates = ({ data }) => {
   };
 
   const notify = () =>
-    toast.success("Adicionou ao carrinho", {
+    toast.success("Prato adicionado", {
       position: "top-right",
       autoClose: 2000,
       hideProgressBar: true,

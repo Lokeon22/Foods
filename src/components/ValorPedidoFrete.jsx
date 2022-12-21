@@ -11,9 +11,10 @@ export const ValorPedidoFrete = ({ brlValorTotal }) => {
   const [simulate, setSimulate] = useState("");
 
   const getCep = async () => {
-    //const data = await fetch(`https://viacep.com.br/ws/${cep}/json/`).then(
-    //(res) => res.json()
-    //);
+    // Api publica para conseguir CEP
+    const data = await fetch(`https://viacep.com.br/ws/${cep}/json/`).then(
+      (res) => res.json()
+    );
     setGetfrete(data);
   };
 
