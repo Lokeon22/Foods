@@ -28,11 +28,18 @@ export const ValorPedidoFrete = ({ brlValorTotal }) => {
     const aleatorio = +brlValorTotal.replace(",", ".") / 4.25;
     const aleatorioConvert = aleatorio.toFixed(2).replace(".", ",");
     setSimulate(aleatorioConvert);
-  }, [pedidos]);
+  }, [brlValorTotal]);
 
   return (
     <div>
-      <h2 className="text-lg mt-1 sm:mt-8 sm:mb-0 mb-4">
+      <h2
+        className="text-lg mt-1 sm:mt-8 sm:mb-0 mb-4"
+        style={
+          getfrete === null
+            ? { color: "white" }
+            : { color: "#c5c5c5", textDecoration: "line-through" }
+        }
+      >
         Total: R$ {brlValorTotal}
       </h2>
       {getfrete === null ? null : (

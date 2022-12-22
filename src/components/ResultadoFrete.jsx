@@ -1,6 +1,11 @@
 import { useState, useEffect } from "react";
 
-export const ResultadoFrete = ({ simulate, getfrete, pedidos }) => {
+export const ResultadoFrete = ({
+  simulate,
+  getfrete,
+  pedidos,
+  brlValorTotal,
+}) => {
   const [valorfinal, setValorfinal] = useState("");
 
   useEffect(() => {
@@ -13,7 +18,7 @@ export const ResultadoFrete = ({ simulate, getfrete, pedidos }) => {
     const newprice = valorTotal + taxaentrega;
     let alterandoBRLnewprice = String(newprice).replace(".", ",").slice(0, 5);
     setValorfinal(alterandoBRLnewprice);
-  }, [pedidos]);
+  }, [brlValorTotal]);
 
   return (
     <div className="flex flex-col flex-wrap mt-1 text-sm md:text-base text-gray-300">

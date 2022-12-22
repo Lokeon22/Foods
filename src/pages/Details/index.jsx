@@ -12,7 +12,7 @@ export const Details = () => {
   const { details } = useContext(FavoritesContext);
 
   return (
-    <section className="max-w-[1400px] h-screen flex flex-col mx-auto my-0  text-white">
+    <section className="max-w-[1400px] h-screen flex flex-col mx-auto my-0 items-start justify-start  text-white">
       <Header />
       <Link to="/home">
         <TitleCategory
