@@ -37,7 +37,7 @@ export const ValorPedidoFrete = ({ brlValorTotal }) => {
         style={
           getfrete === null
             ? { color: "white" }
-            : { color: "#c5c5c5", textDecoration: "line-through" }
+            : { color: "#7C7C8A", textDecoration: "line-through" }
         }
       >
         Total: R$ {brlValorTotal}

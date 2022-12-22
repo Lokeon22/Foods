@@ -18,7 +18,7 @@ export const ResultadoFrete = ({
     const newprice = valorTotal + taxaentrega;
     let alterandoBRLnewprice = String(newprice).replace(".", ",").slice(0, 5);
     setValorfinal(alterandoBRLnewprice);
-  }, [brlValorTotal]);
+  }, [simulate]);
 
   return (
     <div className="flex flex-col flex-wrap mt-1 text-sm md:text-base text-gray-300">
